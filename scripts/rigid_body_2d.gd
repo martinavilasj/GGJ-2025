@@ -51,11 +51,6 @@ func _on_timer_timeout() -> void:
 	jump_velocity = jump_velocity_inicial
 	ralentizado = false
 
-func _on_timer_oxigeno_timeout() -> void:
-	if oxigeno > 0:
-		oxigeno -= disminuidor_oxigeno
-		timer_oxigeno.start()
 
-func disminuir_oxigeno(valor: float):
-	var resta = (oxigeno*valor)/100
-	oxigeno -= resta
+func _on_body_piedra_entered(body: Node) -> void:
+	pass # Replace with function body.
