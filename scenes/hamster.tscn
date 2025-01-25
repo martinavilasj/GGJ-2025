@@ -45,7 +45,7 @@ _data = {
 "giro": SubResource("Animation_2q8rl")
 }
 
-[node name="Hamster" type="CharacterBody2D"]
+[node name="Hamster" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_ofy0e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

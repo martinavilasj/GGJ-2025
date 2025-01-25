@@ -1,7 +1,28 @@
-[gd_scene format=3 uid="uid://cu4b8gb0f7mgu"]
+[gd_scene load_steps=3 format=3 uid="uid://cu4b8gb0f7mgu"]
+
+[ext_resource type="Script" path="res://scripts/rejilla.gd" id="1_ddt7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puwy1"]
+size = Vector2(40, 227)
 
 [node name="Rejilla" type="Area2D"]
+script = ExtResource("1_ddt7p")
+velocidad_relentizado = 150
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, -113.5)
+shape = SubResource("RectangleShape2D_puwy1")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="burbujas" type="ColorRect" parent="."]
+offset_top = -229.0
+offset_right = 40.0
+color = Color(0.625829, 0.749311, 1, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
