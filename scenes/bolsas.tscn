@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqv0hwc6fjjd8"]
 
-[ext_resource type="Texture2D" uid="uid://yhr5ttsosj2w" path="res://assets/—Pngtree—environmental protection of plastic bags_4719470.png" id="1_tijbg"]
 [ext_resource type="Script" path="res://scripts/bolsas.gd" id="1_u7qgs"]
+[ext_resource type="Texture2D" uid="uid://dt3xfpo6fjgym" path="res://assets/bolsa.png" id="2_62las"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t6yl"]
-size = Vector2(159, 163)
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjx8o"]
+radius = 63.0179
 
 [node name="Bolsas" type="Area2D"]
 script = ExtResource("1_u7qgs")
@@ -12,10 +12,10 @@ script = ExtResource("1_u7qgs")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-11, -5)
 scale = Vector2(0.112235, 0.120506)
-texture = ExtResource("1_tijbg")
+texture = ExtResource("2_62las")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(11.5, -13.5)
-shape = SubResource("RectangleShape2D_4t6yl")
+position = Vector2(6, -1.5)
+shape = SubResource("CircleShape2D_cjx8o")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

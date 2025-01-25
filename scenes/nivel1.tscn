@@ -1,15 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://k5vf2pfbw7db"]
+[gd_scene load_steps=6 format=3 uid="uid://k5vf2pfbw7db"]
 
-[ext_resource type="Texture2D" uid="uid://btghyyir7atkp" path="res://assets/background.png" id="1_cmref"]
+[ext_resource type="Texture2D" uid="uid://ewjlqhrisyt2" path="res://assets/Dock/Water waves background seamless liquid pattern vector image on VectorStock.jpg" id="1_ja0j3"]
+[ext_resource type="PackedScene" uid="uid://b5vto1raj48l0" path="res://scenes/rigid_body_2d.tscn" id="3_6mg0o"]
+[ext_resource type="PackedScene" uid="uid://bqv0hwc6fjjd8" path="res://scenes/bolsas.tscn" id="3_cf77e"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i683n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5ib0f"]
 
 [node name="Area2D" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1514, 547)
-texture = ExtResource("1_cmref")
+position = Vector2(2626, 416)
+scale = Vector2(7.49048, 2.31368)
+texture = ExtResource("1_ja0j3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+material = SubResource("CanvasItemMaterial_i683n")
+physics_material_override = SubResource("PhysicsMaterial_5ib0f")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-2, 1)
-polygon = PackedVector2Array(-1, 1, 25, 65, 41, 139, 85, 344, 98, 374, 114, 385, 131, 393, 144, 394, 161, 393, 179, 389, 201, 380, 222, 367, 237, 351, 287, 241, 301, 230, 321, 224, 356, 221, 383, 227, 570, 315, 591, 319, 611, 327, 632, 339, 656, 356, 674, 373, 688, 391, 702, 408, 708, 418, 717, 423, 727, 427, 743, 430, 762, 433, 779, 435, 795, 431, 809, 425, 817, 422, 825, 419, 833, 413, 839, 406, 843, 398, 850, 393, 858, 389, 882, 388, 909, 387, 936.669, 390.054, 951, 390, 957, 388, 961, 386, 965, 384, 969, 382, 973, 379, 977, 376, 982, 375, 992, 378, 998, 384, 1006, 390, 1023, 403, 1040, 428, 1060, 460, 1276, 460, 1286, 438, 1295, 425, 1310, 410, 1350, 394, 1528, 464, -9, 466)
+position = Vector2(-100.619, 182.223)
+scale = Vector2(1.81319, 2.30847)
+polygon = PackedVector2Array(-1, 1, 15.7835, 64.0153, 28.4684, 141.556, 33.432, 279.31, 35.638, 392.805, 145.389, 393.671, 206.056, 393.671, 272.237, 393.671, 340.625, 391.505, 421.698, 381.975, 474.091, 366.38, 525.934, 346.454, 586.049, 312.665, 647.267, 266.314, 700.073, 233.725, 747.642, 204.368, 772.46, 208.267, 807.206, 227.76, 894.896, 335.624, 952.254, 371.579, 997.478, 390.639, 1071.38, 387.173, 1109.99, 418.363, 1177.82, 457.783, 1318.46, 453.451, 1369.2, 407.533, 1443.1, 361.182, 1550.09, 356.417, 1599.18, 423.128, 1660.4, 467.746, -13.4467, 475.544)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+
+[node name="Bolsas" parent="." instance=ExtResource("3_cf77e")]
+position = Vector2(1355, 560)
+scale = Vector2(0.495028, 0.436542)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_6mg0o")]

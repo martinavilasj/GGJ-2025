@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5vto1raj48l0"]
+
+[ext_resource type="Script" path="res://scripts/rigid_body_2d.gd" id="1_jxf05"]
+[ext_resource type="Texture2D" uid="uid://dkpphvlqqtdfu" path="res://assets/bola_prueba.png" id="1_m8fdd"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q0aru"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b023s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5gw8"]
+radius = 63.0714
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["player"]]
+material = SubResource("CanvasItemMaterial_q0aru")
+physics_material_override = SubResource("PhysicsMaterial_b023s")
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_jxf05")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m8fdd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_p5gw8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
