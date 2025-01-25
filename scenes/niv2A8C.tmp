@@ -19,7 +19,7 @@ position = Vector2(2626, 416)
 scale = Vector2(7.49048, 2.31368)
 texture = ExtResource("1_ja0j3")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["suelo"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 material = SubResource("CanvasItemMaterial_i683n")
 physics_material_override = SubResource("PhysicsMaterial_5ib0f")
 
@@ -37,8 +37,6 @@ scale = Vector2(0.495028, 0.436542)
 [node name="RigidBody2D" parent="." instance=ExtResource("3_6mg0o")]
 position = Vector2(598, 163)
 
-[node name="TimerPiedras" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
-[connection signal="timeout" from="TimerPiedras" to="." method="_on_timer_piedras_timeout"]
+[node name="Piedras" parent="." instance=ExtResource("2_c5j1w")]
+position = Vector2(815, 99)
+scale = Vector2(0.5, 0.5)

@@ -45,3 +45,7 @@ func _on_timer_timeout() -> void:
 	velocidad = velocidad_inicial
 	jump_velocity = jump_velocity_inicial
 	ralentizado = false
+
+
+func _on_body_piedra_entered(body: Node) -> void:
+	pass # Replace with function body.
