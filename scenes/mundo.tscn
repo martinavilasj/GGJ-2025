@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhky24mma44ut"]
+
+[ext_resource type="PackedScene" uid="uid://6syxprmo5x3a" path="res://scenes/hamster.tscn" id="1_jnwnm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpmlo"]
+size = Vector2(2012.75, 68.75)
+
+[sub_resource type="TileSet" id="TileSet_3d8uu"]
+
+[node name="Mundo" type="Node2D"]
+
+[node name="Hamster" parent="." instance=ExtResource("1_jnwnm")]
+rotation = -0.0060629
+
+[node name="Camera2D" type="Camera2D" parent="Hamster"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -318.0
+offset_top = 602.0
+offset_right = 1655.0
+offset_bottom = 614.0
+color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-295, 600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(981.625, 42.625)
+shape = SubResource("RectangleShape2D_bpmlo")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_3d8uu")
+format = 2
