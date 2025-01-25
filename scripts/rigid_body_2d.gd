@@ -8,7 +8,7 @@ var jump_velocity = jump_velocity_inicial
 var oxigeno = 100
 var disminuidor_oxigeno = 0.4
 @onready var timer_oxigeno = $Timer_Oxigeno
-@onready var barra_oxigeno = $CanvasLayer/Container/ProgressBar
+@onready var barra_oxigeno = $CanvasLayer/Control/ProgressBar
 
 @onready var timer: Timer = $Timer
 var ralentizado = false
@@ -51,6 +51,5 @@ func _on_timer_timeout() -> void:
 	jump_velocity = jump_velocity_inicial
 	ralentizado = false
 
-
-func _on_body_piedra_entered(body: Node) -> void:
+func _on_timer_oxigeno_timeout() -> void:
 	pass # Replace with function body.
