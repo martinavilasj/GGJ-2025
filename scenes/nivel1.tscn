@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://k5vf2pfbw7db"]
+
+[ext_resource type="Texture2D" uid="uid://btghyyir7atkp" path="res://assets/background.png" id="1_cmref"]
+
+[node name="Area2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1514, 547)
+texture = ExtResource("1_cmref")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-2, 1)
+polygon = PackedVector2Array(-1, 1, 25, 65, 41, 139, 85, 344, 98, 374, 114, 385, 131, 393, 144, 394, 161, 393, 179, 389, 201, 380, 222, 367, 237, 351, 287, 241, 301, 230, 321, 224, 356, 221, 383, 227, 570, 315, 591, 319, 611, 327, 632, 339, 656, 356, 674, 373, 688, 391, 702, 408, 708, 418, 717, 423, 727, 427, 743, 430, 762, 433, 779, 435, 795, 431, 809, 425, 817, 422, 825, 419, 833, 413, 839, 406, 843, 398, 850, 393, 858, 389, 882, 388, 909, 387, 936.669, 390.054, 951, 390, 957, 388, 961, 386, 965, 384, 969, 382, 973, 379, 977, 376, 982, 375, 992, 378, 998, 384, 1006, 390, 1023, 403, 1040, 428, 1060, 460, 1276, 460, 1286, 438, 1295, 425, 1310, 410, 1350, 394, 1528, 464, -9, 466)

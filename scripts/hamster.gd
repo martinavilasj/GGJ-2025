@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var sprite_collision: CollisionShape2D = $CollisionShape2D
 
-var speed = 150
+var speed = 250
 
 func _physics_process(delta: float) -> void:
 	
