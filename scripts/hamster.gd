@@ -10,6 +10,8 @@ var speed = 250
 var jump_vel = -300
 var gravity = 300
 
+var ralentizado: bool = false
+
 func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
@@ -35,9 +37,12 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-func relentizar(tiempo: int, reduccion: int):
-	timer.start(tiempo)
-	speed -= reduccion
+func ralentizar(tiempo: int, reduccion: int):
+	if not ralentizado: 
+		timer.start(tiempo)
+		speed -= reduccion
+		ralentizado = true
 
 func _on_timer_timeout() -> void:
 	speed = initial_speed
+	ralentizado = false
