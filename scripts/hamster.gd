@@ -38,10 +38,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func ralentizar(tiempo: int, reduccion: int):
-	if not ralentizado: 
-		timer.start(tiempo)
-		speed -= reduccion
-		ralentizado = true
+	timer.start(tiempo)
+	speed -= reduccion
 
 func _on_timer_timeout() -> void:
 	speed = initial_speed
