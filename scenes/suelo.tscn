@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5o00kjgbbhhw"]
+
+[ext_resource type="Texture2D" uid="uid://ewjlqhrisyt2" path="res://assets/Dock/Water waves background seamless liquid pattern vector image on VectorStock.jpg" id="1_q6n1l"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ndvxy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pqvjo"]
+
+[node name="suelo" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2626, 416)
+scale = Vector2(7.49048, 2.31368)
+texture = ExtResource("1_q6n1l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["suelo"]]
+material = SubResource("CanvasItemMaterial_ndvxy")
+physics_material_override = SubResource("PhysicsMaterial_pqvjo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-100.619, 182.223)
+scale = Vector2(1.81319, 2.30847)
+polygon = PackedVector2Array(-1, 1, 15.7835, 64.0153, 28.4684, 141.556, 33.432, 279.31, 35.638, 392.805, 145.389, 393.671, 206.056, 393.671, 272.237, 393.671, 340.625, 391.505, 421.698, 381.975, 474.091, 366.38, 525.934, 346.454, 586.049, 312.665, 647.267, 266.314, 700.073, 233.725, 747.642, 204.368, 772.46, 208.267, 807.206, 227.76, 894.896, 335.624, 952.254, 371.579, 997.478, 390.639, 1071.38, 387.173, 1109.99, 418.363, 1177.82, 457.783, 1318.46, 453.451, 1369.2, 407.533, 1443.1, 361.182, 1550.09, 356.417, 1599.18, 423.128, 1660.4, 467.746, -13.4467, 475.544)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]

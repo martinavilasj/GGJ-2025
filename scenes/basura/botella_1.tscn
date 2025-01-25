@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm8j3t0npalqs"]
+
+[ext_resource type="Script" path="res://scripts/basura/botella_1.gd" id="1_0tfko"]
+[ext_resource type="Texture2D" uid="uid://qg815jbp2jc6" path="res://assets/basura/botella_1.png" id="1_5h5qj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hw0k"]
+size = Vector2(90, 42)
+
+[node name="botella_1" type="Area2D"]
+script = ExtResource("1_0tfko")
+disminuidor = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("1_5h5qj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_8hw0k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

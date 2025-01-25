@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://k5vf2pfbw7db"]
+[gd_scene load_steps=7 format=3 uid="uid://k5vf2pfbw7db"]
 
 [ext_resource type="Texture2D" uid="uid://ewjlqhrisyt2" path="res://assets/Dock/Water waves background seamless liquid pattern vector image on VectorStock.jpg" id="1_ja0j3"]
+[ext_resource type="PackedScene" uid="uid://dm8j3t0npalqs" path="res://scenes/basura/botella_1.tscn" id="2_jfy3w"]
 [ext_resource type="PackedScene" uid="uid://b5vto1raj48l0" path="res://scenes/rigid_body_2d.tscn" id="3_6mg0o"]
 [ext_resource type="PackedScene" uid="uid://bqv0hwc6fjjd8" path="res://scenes/bolsas.tscn" id="3_cf77e"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i683n"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yubuu"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5ib0f"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7c2ag"]
 
 [node name="Area2D" type="Node2D"]
 
@@ -15,19 +16,23 @@ position = Vector2(2626, 416)
 scale = Vector2(7.49048, 2.31368)
 texture = ExtResource("1_ja0j3")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-material = SubResource("CanvasItemMaterial_i683n")
-physics_material_override = SubResource("PhysicsMaterial_5ib0f")
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["suelo"]]
+material = SubResource("CanvasItemMaterial_yubuu")
+physics_material_override = SubResource("PhysicsMaterial_7c2ag")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-100.619, 182.223)
 scale = Vector2(1.81319, 2.30847)
-polygon = PackedVector2Array(-1, 1, 15.7835, 64.0153, 28.4684, 141.556, 33.432, 279.31, 35.638, 392.805, 145.389, 393.671, 206.056, 393.671, 272.237, 393.671, 340.625, 391.505, 421.698, 381.975, 474.091, 366.38, 525.934, 346.454, 586.049, 312.665, 647.267, 266.314, 700.073, 233.725, 747.642, 204.368, 772.46, 208.267, 807.206, 227.76, 894.896, 335.624, 952.254, 371.579, 997.478, 390.639, 1071.38, 387.173, 1109.99, 418.363, 1177.82, 457.783, 1318.46, 453.451, 1369.2, 407.533, 1443.1, 361.182, 1550.09, 356.417, 1599.18, 423.128, 1660.4, 467.746, -13.4467, 475.544)
+polygon = PackedVector2Array(-12.895, 2.06934, 11.3717, 77.4439, 28.4684, 141.556, 35.0868, 278.443, 45.014, 361.615, 56.0443, 385.873, 70.9352, 402.768, 83.0685, 403.201, 97.4079, 401.035, 122.778, 398.436, 145.389, 393.671, 206.056, 393.671, 272.237, 393.671, 340.625, 391.505, 421.698, 381.975, 474.091, 366.38, 525.934, 346.454, 586.049, 312.665, 647.267, 266.314, 700.073, 233.725, 747.642, 204.368, 772.46, 208.267, 807.206, 227.76, 894.896, 335.624, 952.254, 371.579, 997.478, 390.639, 1071.38, 387.173, 1109.99, 418.363, 1177.82, 457.783, 1318.46, 453.451, 1369.2, 407.533, 1443.1, 361.182, 1550.09, 356.417, 1599.18, 423.128, 1660.4, 467.746, -13.4467, 475.544)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+
+[node name="botella_1" parent="StaticBody2D" instance=ExtResource("2_jfy3w")]
+position = Vector2(2151, 1208)
 
 [node name="Bolsas" parent="." instance=ExtResource("3_cf77e")]
 position = Vector2(1355, 560)
 scale = Vector2(0.495028, 0.436542)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_6mg0o")]
+position = Vector2(36, 3)

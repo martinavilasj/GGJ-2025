@@ -1,15 +1,20 @@
 extends RigidBody2D
 
-var velocidad_inicial = 20
-var velocidad = 20
-var jump_velocity_inicial = 200
-var jump_velocity = 250
+@export var velocidad_inicial = 20
+var velocidad = velocidad_inicial
+@export var jump_velocity_inicial = 200
+var jump_velocity = jump_velocity_inicial
+
+var oxigeno = 100
+var disminuidor_oxigeno = 0.4
+@onready var timer_oxigeno = $Timer_Oxigeno
+@onready var barra_oxigeno = $CanvasLayer/Container/ProgressBar
 
 @onready var timer: Timer = $Timer
 var ralentizado = false
 
 func _ready() -> void:
-	pass # Replace with function body.
+	timer_oxigeno.start()
 
 func _physics_process(delta: float) -> void:
 	var direccion = Vector2.ZERO
@@ -30,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	barra_oxigeno.value = oxigeno
 
 func ralentizar(tiempo,reduccion):
 	if not ralentizado:
@@ -45,3 +50,12 @@ func _on_timer_timeout() -> void:
 	velocidad = velocidad_inicial
 	jump_velocity = jump_velocity_inicial
 	ralentizado = false
+
+func _on_timer_oxigeno_timeout() -> void:
+	if oxigeno > 0:
+		oxigeno -= disminuidor_oxigeno
+		timer_oxigeno.start()
+
+func disminuir_oxigeno(valor: float):
+	var resta = (oxigeno*valor)/100
+	oxigeno -= resta
