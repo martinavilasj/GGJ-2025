@@ -20,6 +20,8 @@ var disminuidor_oxigeno = 0.4
 
 var ralentizado = false
 
+var buff = false
+
 func _ready() -> void:
 	timer_oxigeno.start()
 	animated_sprite_2d.play("idle")
@@ -107,3 +109,8 @@ func set_state(new_state: PlayerState) -> void:
 
 func _on_timer_dormir_timeout() -> void:
 	set_state(PlayerState.SLEEP)
+	
+func dar_oxigeno(multiplicador: float):
+	if not buff:
+		oxigeno *= multiplicador
+		buff = true

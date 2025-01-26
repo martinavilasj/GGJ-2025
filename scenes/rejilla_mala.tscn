@@ -1,11 +1,50 @@
-[gd_scene load_steps=8 format=3 uid="uid://cu4b8gb0f7mgu"]
+[gd_scene load_steps=8 format=3 uid="uid://c76h60h25twfu"]
 
-[ext_resource type="Script" path="res://scripts/rejilla.gd" id="1_ddt7p"]
-[ext_resource type="Texture2D" uid="uid://b4vk1njjqsaxn" path="res://assets/rejilla/rejilla_verde.png" id="2_ukcsy"]
-[ext_resource type="Texture2D" uid="uid://bm8x8nnwbd1ec" path="res://assets/burbuja/burbuja.png" id="3_dp7xg"]
+[ext_resource type="Script" path="res://scripts/rejilla_mala.gd" id="1_21c2r"]
+[ext_resource type="Texture2D" uid="uid://bm8x8nnwbd1ec" path="res://assets/burbuja/burbuja.png" id="2_s2bhn"]
+[ext_resource type="Texture2D" uid="uid://dlcmn3isk1r08" path="res://assets/rejilla/rejilla_gastada.png" id="3_837nw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_puwy1"]
-size = Vector2(79, 253)
+size = Vector2(75, 253)
+
+[sub_resource type="Animation" id="Animation_xyvxb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("burbujas:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("burbujas2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("burbujas3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_d3f76"]
 resource_name = "burbujas"
@@ -48,162 +87,126 @@ tracks/2/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, -500)]
 }
 
-[sub_resource type="Animation" id="Animation_xyvxb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("burbujas:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("burbujas2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("burbujas3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aotml"]
 _data = {
 "RESET": SubResource("Animation_xyvxb"),
 "burbujas": SubResource("Animation_d3f76")
 }
 
-[node name="Rejilla" type="Area2D"]
-script = ExtResource("1_ddt7p")
+[node name="Rejilla_Mala" type="Area2D"]
+script = ExtResource("1_21c2r")
 
 [node name="burbujas" type="CanvasGroup" parent="."]
+modulate = Color(0.737669, 0.77689, 0.39744, 1)
 
 [node name="burbuja" type="Sprite2D" parent="burbujas"]
 position = Vector2(-17, 53)
 scale = Vector2(0.0333784, 0.0333784)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja4" type="Sprite2D" parent="burbujas"]
 position = Vector2(-28, 32)
 scale = Vector2(0.0268243, 0.0268243)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja7" type="Sprite2D" parent="burbujas"]
 position = Vector2(14, 9)
 scale = Vector2(0.0266216, 0.0266216)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja11" type="Sprite2D" parent="burbujas"]
 position = Vector2(-8, 2)
 scale = Vector2(0.03, 0.03)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja14" type="Sprite2D" parent="burbujas"]
 position = Vector2(-19, -23)
 scale = Vector2(0.0232432, 0.0232432)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja16" type="Sprite2D" parent="burbujas"]
 position = Vector2(-19, 6)
 scale = Vector2(0.0234459, 0.0234459)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja17" type="Sprite2D" parent="burbujas"]
 position = Vector2(23, 66)
 scale = Vector2(0.0198649, 0.0198649)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbujas2" type="CanvasGroup" parent="."]
+modulate = Color(0.737255, 0.776471, 0.396078, 1)
 
 [node name="burbuja2" type="Sprite2D" parent="burbujas2"]
 position = Vector2(5, 53)
 scale = Vector2(0.0164865, 0.0164865)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja5" type="Sprite2D" parent="burbujas2"]
 position = Vector2(-13, 32)
 scale = Vector2(0.015, 0.015)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja8" type="Sprite2D" parent="burbujas2"]
 position = Vector2(7, -26)
 scale = Vector2(0.0164865, 0.0164865)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja9" type="Sprite2D" parent="burbujas2"]
 position = Vector2(-31, 69)
 scale = Vector2(0.0131081, 0.0131081)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja10" type="Sprite2D" parent="burbujas2"]
 position = Vector2(27, 9)
 scale = Vector2(0.0164865, 0.0164865)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja13" type="Sprite2D" parent="burbujas2"]
 position = Vector2(9, 82)
 scale = Vector2(0.0164865, 0.0164865)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbujas3" type="CanvasGroup" parent="."]
+modulate = Color(0.737255, 0.776471, 0.396078, 1)
 
 [node name="burbuja3" type="Sprite2D" parent="burbujas3"]
 position = Vector2(20, 81)
 scale = Vector2(0.0232432, 0.0232432)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja6" type="Sprite2D" parent="burbujas3"]
 position = Vector2(-13, 76)
 scale = Vector2(0.0232432, 0.0232432)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja12" type="Sprite2D" parent="burbujas3"]
 position = Vector2(7, 25)
 scale = Vector2(0.0198649, 0.0198649)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja19" type="Sprite2D" parent="burbujas3"]
 position = Vector2(24, -25)
 scale = Vector2(0.0198649, 0.0198649)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja15" type="Sprite2D" parent="burbujas3"]
 position = Vector2(21, 33)
 scale = Vector2(0.0232433, 0.0232433)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="burbuja18" type="Sprite2D" parent="burbujas3"]
 position = Vector2(4, -6)
 scale = Vector2(0.0198649, 0.0198649)
-texture = ExtResource("3_dp7xg")
+texture = ExtResource("2_s2bhn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 17.8013)
-scale = Vector2(0.095, 0.128556)
-texture = ExtResource("2_ukcsy")
+position = Vector2(-2, 27)
+scale = Vector2(0.095, 0.13683)
+texture = ExtResource("3_837nw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -163.5)
+position = Vector2(-1.5, -163.5)
 shape = SubResource("RectangleShape2D_puwy1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

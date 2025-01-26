@@ -2,7 +2,8 @@ extends Area2D
 
 @onready var collision: CollisionShape2D = $CollisionShape2D
 
-@export var buff_oxigeno: float = 1.1
+@export var ralentizar: float = 0.5
+@export var tiempo_ralentizar: int = 5
 
 @onready var animacion: AnimationPlayer = $AnimationPlayer
 
@@ -12,4 +13,4 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		body.dar_oxigeno(buff_oxigeno)
+		body.ralentizar(tiempo_ralentizar,ralentizar)
