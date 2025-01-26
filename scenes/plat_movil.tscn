@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://2rjqpfvvcqqy"]
 
-[ext_resource type="Texture2D" uid="uid://6p1aevrk62s1" path="res://assets/—Pngtree—brown wood log_8625748.png" id="1_1j3pd"]
 [ext_resource type="Script" path="res://scripts/plat_movil.gd" id="1_nrdwn"]
+[ext_resource type="Texture2D" uid="uid://cammbljlqel13" path="res://assets/tronco.png" id="2_ltcae"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5mr0w"]
 
@@ -13,8 +13,9 @@ physics_material_override = SubResource("PhysicsMaterial_5mr0w")
 script = ExtResource("1_nrdwn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.517012, 0.461396)
-texture = ExtResource("1_1j3pd")
+position = Vector2(2.50001, -1.5)
+scale = Vector2(0.446038, 0.236239)
+texture = ExtResource("2_ltcae")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4.3, 0)
