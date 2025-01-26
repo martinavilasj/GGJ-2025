@@ -12,7 +12,7 @@ var jump_velocity = jump_velocity_inicial
 var oxigeno = 100
 var disminuidor_oxigeno = 0.4
 @onready var timer_oxigeno = $Timer_Oxigeno
-@onready var barra_oxigeno = $CanvasLayer/Control/ProgressBar
+@onready var barra_oxigeno = $CanvasLayer/Control/TextureProgressBar
 @onready var timer_ralentizar: Timer = $Timer_ralentizar
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -47,11 +47,26 @@ func _physics_process(delta: float) -> void:
 	apply_central_impulse(direccion * velocidad)
 	calculate_states()
 	
-
+	if oxigeno < 10:
+		$CanvasLayer/Control/corazon.visible = false
+		$"CanvasLayer/Control/corazon-mitad".visible = false
+		$"CanvasLayer/Control/corazon-muerto".visible = true
+	elif oxigeno < 50:
+		$CanvasLayer/Control/corazon.visible = false
+		$"CanvasLayer/Control/corazon-mitad".visible = true
+		$"CanvasLayer/Control/corazon-muerto".visible = false
+	else:
+		$CanvasLayer/Control/corazon.visible = true
+		$"CanvasLayer/Control/corazon-mitad".visible = false
+		$"CanvasLayer/Control/corazon-muerto".visible = false
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	barra_oxigeno.value = oxigeno
 	animated_sprite_2d.rotation = -rotation
+	
+	if oxigeno <= 0:
+		get_tree().change_scene_to_file("res://scenes/menus/game_over.tscn")
 
 func ralentizar(tiempo,reduccion):
 	if not ralentizado:
@@ -116,3 +131,10 @@ func dar_oxigeno(multiplicador: float):
 	if not buff:
 		oxigeno *= multiplicador
 		buff = true
+
+func apagar_luz(apagar: bool) -> void:
+	if apagar:
+		$AnimationPlayer.play("apagar_luz")
+	else:
+		$AnimationPlayer.play_backwards("apagar_luz")
+	

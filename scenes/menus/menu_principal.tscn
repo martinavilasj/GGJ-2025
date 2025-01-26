@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bydyl15v36oky"]
+[gd_scene load_steps=20 format=3 uid="uid://bydyl15v36oky"]
 
 [ext_resource type="Texture2D" uid="uid://skp7uuksx7lj" path="res://assets/realistic-transparent-3d-bubbles-underwater-soap-bubbles-vector-illustration-png.webp" id="1_flkib"]
 [ext_resource type="Script" path="res://scripts/menus/menu_principal.gd" id="1_mj3rs"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://5v2f1x350eti" path="res://assets/botones/BOTON_CREDITOS_SELECCION.png" id="7_uj8qo"]
 [ext_resource type="Texture2D" uid="uid://dc3pnomlb75ii" path="res://assets/botones/BOTON_SALIR.png" id="8_p06kq"]
 [ext_resource type="Texture2D" uid="uid://cmjcqb6otkftp" path="res://assets/botones/BOTON_SALIR_SELECCION.png" id="9_3hr7l"]
+[ext_resource type="AudioStream" uid="uid://cwarmtc3hu5ms" path="res://sounds/menú.wav" id="11_bt7su"]
 
 [sub_resource type="Gradient" id="Gradient_opm7o"]
 colors = PackedColorArray(0.141176, 0.231373, 0.25098, 1, 0.239216, 0.376471, 0.396078, 1)
@@ -201,10 +202,10 @@ tracks/1/path = NodePath("Burbuja2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0333333, 11.0333, 15, 20),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 11.0333, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1094, 720), Vector2(1094, -85.9999), Vector2(1094, -261), Vector2(1094, -201)]
+"values": [Vector2(1094, 647.35), Vector2(1094, 720), Vector2(1094, -85.9999), Vector2(1094, -261), Vector2(1094, -313.074)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -213,10 +214,10 @@ tracks/2/path = NodePath("Burbuja3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 5, 10.9667, 15, 20),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 5, 10.9667, 15, 19.9333, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(882, 786), Vector2(882, 846), Vector2(882, -338), Vector2(882, -300), Vector2(882, -179)]
+"values": [Vector2(882, 786), Vector2(882, 846), Vector2(882, -338), Vector2(882, -300), Vector2(882, -270.671), Vector2(882, -179)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -228,7 +229,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.966666, 6.03333, 15, 20),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(103, 977), Vector2(103, 996), Vector2(103, -83.0001), Vector2(103, -109), Vector2(103, -109)]
+"values": [Vector2(103, 977), Vector2(103, 996), Vector2(103, -83.0001), Vector2(103, -109), Vector2(103, -436.749)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -252,7 +253,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 2.93333, 10.1333, 15, 20),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(102, 761), Vector2(102, 761), Vector2(102, -92.9999), Vector2(102, -166), Vector2(102, -255)]
+"values": [Vector2(102, 761), Vector2(102, 761), Vector2(102, -92.9999), Vector2(102, -166), Vector2(102, -325.795)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -261,10 +262,10 @@ tracks/6/path = NodePath("Burbuja7:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.0333333, 5, 8.03333, 15, 20),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 5, 8.03333, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(331, 944), Vector2(331, 944), Vector2(331, -281), Vector2(331, -329), Vector2(331, -322)]
+"values": [Vector2(331, 578.799), Vector2(331, 944), Vector2(331, 944), Vector2(331, -281), Vector2(331, -329), Vector2(331, -322)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -276,7 +277,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 4.03333, 11.0333, 15, 20),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(408, 903), Vector2(408, 1033), Vector2(408, -97), Vector2(408, -156), Vector2(408, -180)]
+"values": [Vector2(408, 903), Vector2(408, 1033), Vector2(408, -97), Vector2(408, -156), Vector2(408, -313.781)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -297,10 +298,10 @@ tracks/9/path = NodePath("Burbuja10:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0.0333333, 11, 20),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 11, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(628, 900), Vector2(628, 900), Vector2(628, -122)]
+"values": [Vector2(628, 636.749), Vector2(628, 900), Vector2(628, 900), Vector2(628, -371.025)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -309,10 +310,10 @@ tracks/10/path = NodePath("Burbuja11:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 13.0333, 20),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 13.0333, 19.9333, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(768, 709), Vector2(768, 709), Vector2(768, -55.9999)]
+"values": [Vector2(768, 709), Vector2(768, 709), Vector2(768, -291.166), Vector2(768, -55.9999)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -321,10 +322,10 @@ tracks/11/path = NodePath("Burbuja12:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0.0333333, 14.9667, 20),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 14.9667, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(278, 768), Vector2(278, 768), Vector2(278, -115)]
+"values": [Vector2(278, 650.177), Vector2(278, 768), Vector2(278, 768), Vector2(278, -312.368)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -336,13 +337,122 @@ tracks/12/keys = {
 "times": PackedFloat32Array(0, 14.9667, 18, 20),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(956, 837), Vector2(956, 837), Vector2(956, -131), Vector2(956, -160)]
+"values": [Vector2(956, 837), Vector2(956, 837), Vector2(956, -131), Vector2(956, -250.883)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p0hgi"]
 _data = {
 "RESET": SubResource("Animation_qrpqi"),
 "burbujas": SubResource("Animation_tkiaw")
+}
+
+[sub_resource type="Animation" id="Animation_7whno"]
+resource_name = "inicio"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("nuevo_juego:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Creditos:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Salir:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_se1br"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("nuevo_juego:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Creditos:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Salir:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h080d"]
+_data = {
+"RESET": SubResource("Animation_se1br"),
+"inicio": SubResource("Animation_7whno")
 }
 
 [node name="menu_principal" type="Control"]
@@ -365,6 +475,8 @@ texture = SubResource("GradientTexture2D_anlk0")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 modulate = Color(1, 1, 1, 0.745098)
+position = Vector2(129, 318)
+scale = Vector2(1.415, 1.415)
 
 [node name="Burbuja" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(102, 761)
@@ -442,20 +554,21 @@ offset_bottom = 66.0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -200.5
-offset_top = -34.0
-offset_right = 200.5
-offset_bottom = 367.0
+offset_left = -293.5
+offset_right = 293.5
+offset_bottom = 587.0
 grow_horizontal = 2
 texture = ExtResource("3_b5n55")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="nuevo_juego" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -464,8 +577,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -125.0
 offset_top = 23.0
-offset_right = 125.0
-offset_bottom = 85.0
+offset_right = 175.0
+offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_0vdks")
@@ -475,6 +588,7 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Creditos" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -482,9 +596,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -125.0
-offset_top = 101.0
-offset_right = 125.0
-offset_bottom = 163.0
+offset_top = 133.0
+offset_right = 175.0
+offset_bottom = 208.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("6_u3rvf")
@@ -494,6 +608,7 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Salir" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -501,9 +616,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -125.0
-offset_top = 182.0
-offset_right = 125.0
-offset_bottom = 244.0
+offset_top = 246.0
+offset_right = 175.0
+offset_bottom = 321.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("8_p06kq")
@@ -524,6 +639,15 @@ texture = ExtResource("4_21oyg")
 expand_mode = 1
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_bt7su")
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h080d")
+}
 
 [connection signal="pressed" from="nuevo_juego" to="." method="_on_nuevo_juego_pressed"]
 [connection signal="pressed" from="Creditos" to="." method="_on_creditos_pressed"]

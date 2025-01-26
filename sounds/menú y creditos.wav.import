@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://78lt8mvnymno"
+path="res://.godot/imported/menú y creditos.wav-7a7c1900bd7e5e1bfa73fa4184a84963.sample"
+
+[deps]
+
+source_file="res://sounds/menú y creditos.wav"
+dest_files=["res://.godot/imported/menú y creditos.wav-7a7c1900bd7e5e1bfa73fa4184a84963.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

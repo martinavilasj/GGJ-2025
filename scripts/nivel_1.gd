@@ -5,6 +5,8 @@ extends Node2D
 @onready var canvasmodulate: CanvasModulate = $CanvasModulate
 @onready var animacion_canvas: AnimationPlayer = $AnimationCanvas
 
+var canvas_activo = false
+var hamster_in_zone = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -30,10 +32,25 @@ func _on_zona_oscura_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		animacion_canvas.play("canvas")
 		body.luz.enabled = true
+		body.apagar_luz(false)
+		canvas_activo = true
 		
 
 
 func _on_zona_clara_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		animacion_canvas.play_backwards("canvas")
-		#body.luz.enabled = false
+		if not hamster_in_zone:
+			if canvas_activo:
+				animacion_canvas.play_backwards("canvas")
+				body.apagar_luz(true)
+				canvas_activo = false
+			else:
+				animacion_canvas.play("canvas")
+				body.apagar_luz(false)
+				canvas_activo = true
+			hamster_in_zone = true	
+
+
+func _on_zona_clara_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		hamster_in_zone = false

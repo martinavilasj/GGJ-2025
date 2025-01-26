@@ -1,10 +1,14 @@
-[gd_scene load_steps=62 format=3 uid="uid://b5vto1raj48l0"]
+[gd_scene load_steps=69 format=3 uid="uid://b5vto1raj48l0"]
 
 [ext_resource type="Script" path="res://scripts/rigid_body_2d.gd" id="1_jxf05"]
 [ext_resource type="Texture2D" uid="uid://diogyr3n0dv7h" path="res://assets/burbuja_hamster.png" id="2_d25mc"]
 [ext_resource type="Texture2D" uid="uid://cayxxv0eg3rck" path="res://assets/sprite_sheet_walk.png" id="2_t4iwk"]
 [ext_resource type="Texture2D" uid="uid://g5qia6ua2tm2" path="res://assets/sprite_sheet_idle.png" id="4_jg55i"]
 [ext_resource type="Texture2D" uid="uid://dq1c6t5cc3c5d" path="res://assets/sprite_sheet_lay_down.png" id="5_8obtp"]
+[ext_resource type="Texture2D" uid="uid://b8cgfriyr3ei0" path="res://assets/barra/viento_sin_fondo-01.png" id="6_u4nov"]
+[ext_resource type="Texture2D" uid="uid://dpgc5pmkb4tw6" path="res://assets/barra/corazon-01.png" id="7_t54tx"]
+[ext_resource type="Texture2D" uid="uid://n713w1fsghfv" path="res://assets/barra/corazon_quebrado-01.png" id="8_5f8qe"]
+[ext_resource type="Texture2D" uid="uid://crdq2hdoc6cg5" path="res://assets/barra/dead_heart-01.png" id="9_pcv68"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q0aru"]
 
@@ -401,6 +405,42 @@ fill = 1
 fill_from = Vector2(0.5, 0.504587)
 fill_to = Vector2(0.770642, 0.142202)
 
+[sub_resource type="Animation" id="Animation_dl5e4"]
+resource_name = "apagar_luz"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_occfj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xx8w5"]
+_data = {
+"RESET": SubResource("Animation_occfj"),
+"apagar_luz": SubResource("Animation_dl5e4")
+}
+
 [node name="RigidBody2D" type="RigidBody2D" groups=["player"]]
 material = SubResource("CanvasItemMaterial_q0aru")
 physics_material_override = SubResource("PhysicsMaterial_b023s")
@@ -444,10 +484,57 @@ offset_bottom = 40.0
 grow_horizontal = 0
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = -272.0
-offset_right = 4.0
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -276.0
 offset_bottom = 27.0
+grow_horizontal = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -436.0
+offset_top = -124.0
+offset_right = 6118.0
+offset_bottom = 4376.0
+grow_horizontal = 0
+scale = Vector2(0.065, 0.065)
+value = 100.0
+texture_progress = ExtResource("6_u4nov")
+
+[node name="corazon" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -454.0
+offset_top = 20.0
+offset_right = 1629.0
+offset_bottom = 2103.0
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("7_t54tx")
+
+[node name="corazon-mitad" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = -454.0
+offset_top = 20.0
+offset_right = 1629.0
+offset_bottom = 2103.0
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("8_5f8qe")
+
+[node name="corazon-muerto" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = -454.0
+offset_top = 20.0
+offset_right = 1629.0
+offset_bottom = 2103.0
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("9_pcv68")
 
 [node name="Timer_dormir" type="Timer" parent="."]
 wait_time = 10.0
@@ -457,6 +544,11 @@ scale = Vector2(2.68, 2.68)
 enabled = false
 texture = SubResource("GradientTexture2D_l7er1")
 texture_scale = 5.28
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xx8w5")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_piedra_entered"]
 [connection signal="timeout" from="Timer_ralentizar" to="." method="_on_timer_timeout"]

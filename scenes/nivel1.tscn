@@ -49,7 +49,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnguu"]
-size = Vector2(934.042, 25)
+size = Vector2(721.608, 25)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i683n"]
 
@@ -77,8 +77,9 @@ shape = SubResource("RectangleShape2D_mnguu")
 position = Vector2(7048, 1447)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zona_clara"]
-position = Vector2(253.824, 27.7036)
-rotation = 0.326735
+position = Vector2(153.227, -6.38696)
+rotation = 0.453153
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_mnguu")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -237,4 +238,5 @@ destination = NodePath("../Marker2D")
 
 [connection signal="body_entered" from="zona_oscura" to="." method="_on_zona_oscura_body_entered"]
 [connection signal="body_entered" from="zona_clara" to="." method="_on_zona_clara_body_entered"]
+[connection signal="body_exited" from="zona_clara" to="." method="_on_zona_clara_body_exited"]
 [connection signal="timeout" from="TimerPiedras" to="." method="_on_timer_piedras_timeout"]
