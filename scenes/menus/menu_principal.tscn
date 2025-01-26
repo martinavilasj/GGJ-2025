@@ -1,0 +1,477 @@
+[gd_scene load_steps=9 format=3 uid="uid://bydyl15v36oky"]
+
+[ext_resource type="Texture2D" uid="uid://skp7uuksx7lj" path="res://assets/realistic-transparent-3d-bubbles-underwater-soap-bubbles-vector-illustration-png.webp" id="1_flkib"]
+[ext_resource type="Script" path="res://scripts/menus/menu_principal.gd" id="1_mj3rs"]
+
+[sub_resource type="Gradient" id="Gradient_opm7o"]
+colors = PackedColorArray(0.117647, 0.117647, 0.258824, 1, 0.756863, 0.760784, 0.980392, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_anlk0"]
+gradient = SubResource("Gradient_opm7o")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Animation" id="Animation_qrpqi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Burbuja6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1010, 969)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Burbuja2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1094, 720)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Burbuja3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(882, 846)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Burbuja4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(103, 996)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Burbuja5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(210, 934)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Burbuja:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(102, 761)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Burbuja7:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(331, 944)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Burbuja8:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(408, 1033)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Burbuja9:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(695, 1090)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Burbuja10:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(628, 900)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Burbuja11:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(768, 709)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Burbuja12:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(278, 768)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Burbuja13:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(956, 837)]
+}
+
+[sub_resource type="Animation" id="Animation_tkiaw"]
+resource_name = "burbujas"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Burbuja6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1010, 969), Vector2(1010, -112), Vector2(1010, -374)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Burbuja2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 11.0333, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1094, 720), Vector2(1094, -85.9999), Vector2(1094, -261), Vector2(1094, -201)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Burbuja3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5, 10.9667, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(882, 786), Vector2(882, 846), Vector2(882, -338), Vector2(882, -300), Vector2(882, -179)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Burbuja4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.966666, 6.03333, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(103, 977), Vector2(103, 996), Vector2(103, -83.0001), Vector2(103, -109), Vector2(103, -109)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Burbuja5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8.06667, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(210, 934), Vector2(210, 934), Vector2(210, -161), Vector2(210, -403)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Burbuja:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.93333, 10.1333, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(102, 761), Vector2(102, 761), Vector2(102, -92.9999), Vector2(102, -166), Vector2(102, -255)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Burbuja7:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0333333, 5, 8.03333, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(331, 944), Vector2(331, 944), Vector2(331, -281), Vector2(331, -329), Vector2(331, -322)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Burbuja8:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4.03333, 11.0333, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(408, 903), Vector2(408, 1033), Vector2(408, -97), Vector2(408, -156), Vector2(408, -180)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Burbuja9:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8, 13, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(695, 1090), Vector2(695, 1090), Vector2(695, -96.9998), Vector2(695, -145), Vector2(695, -285)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Burbuja10:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0333333, 11, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(628, 900), Vector2(628, 900), Vector2(628, -122)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Burbuja11:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 13.0333, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(768, 709), Vector2(768, 709), Vector2(768, -55.9999)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Burbuja12:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.0333333, 14.9667, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(278, 768), Vector2(278, 768), Vector2(278, -115)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Burbuja13:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 14.9667, 18, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(956, 837), Vector2(956, 837), Vector2(956, -131), Vector2(956, -160)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p0hgi"]
+_data = {
+"RESET": SubResource("Animation_qrpqi"),
+"burbujas": SubResource("Animation_tkiaw")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_wuvqf"]
+line_spacing = 3.05
+font_size = 101
+
+[node name="menu_principal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mj3rs")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_anlk0")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+modulate = Color(1, 1, 1, 0.745098)
+
+[node name="Burbuja" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(102, 761)
+scale = Vector2(0.735, 0.735)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1094, 720)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja3" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(882, 846)
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja4" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(103, 996)
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja5" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(210, 934)
+scale = Vector2(0.59, 0.59)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja6" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1010, 969)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja7" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(331, 944)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja8" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(408, 1033)
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja9" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(695, 1090)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja10" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(628, 900)
+scale = Vector2(0.71, 0.71)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja11" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(768, 709)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja12" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(278, 768)
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("1_flkib")
+
+[node name="Burbuja13" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(956, 837)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("1_flkib")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasGroup"]
+libraries = {
+"": SubResource("AnimationLibrary_p0hgi")
+}
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -218.0
+offset_top = 119.0
+offset_right = 218.0
+offset_bottom = 257.0
+grow_horizontal = 2
+text = "FURBALL"
+label_settings = SubResource("LabelSettings_wuvqf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -108.0
+offset_top = -266.0
+offset_right = 105.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="nuevo_juego" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Nuevo juego"
+
+[node name="Creditos" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Creditos"
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Salir"
+
+[connection signal="pressed" from="VBoxContainer/nuevo_juego" to="." method="_on_nuevo_juego_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

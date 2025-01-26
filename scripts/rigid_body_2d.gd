@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-enum PlayerState { IDLE, RUN, JUMP, FALL, HURT}
+enum PlayerState { IDLE, RUN, JUMP, FALL, HURT, SLEEP}
 
 var  _state: PlayerState = PlayerState.IDLE
 
@@ -16,10 +16,13 @@ var disminuidor_oxigeno = 0.4
 @onready var timer_ralentizar: Timer = $Timer_ralentizar
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var timer_dormir: Timer = $Timer_dormir
+
 var ralentizado = false
 
 func _ready() -> void:
 	timer_oxigeno.start()
+	animated_sprite_2d.play("idle")
 
 func _physics_process(delta: float) -> void:
 	var direccion = Vector2.ZERO
@@ -79,7 +82,10 @@ func calculate_states() -> void:
 	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left") == true:
 		set_state(PlayerState.RUN)
 	else:
-		set_state(PlayerState.IDLE)
+		if not animated_sprite_2d.animation == "lay_down":
+			set_state(PlayerState.IDLE)
+			if timer_dormir.is_stopped():
+				timer_dormir.start()
 
 func set_state(new_state: PlayerState) -> void:
 	if new_state ==_state:
@@ -95,3 +101,9 @@ func set_state(new_state: PlayerState) -> void:
 			animated_sprite_2d.play("salto")
 		PlayerState.FALL:
 			animated_sprite_2d.play("caida")
+		PlayerState.SLEEP:
+			animated_sprite_2d.play("lay_down")
+
+
+func _on_timer_dormir_timeout() -> void:
+	set_state(PlayerState.SLEEP)
