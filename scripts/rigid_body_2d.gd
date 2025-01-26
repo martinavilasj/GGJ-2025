@@ -18,6 +18,8 @@ var disminuidor_oxigeno = 0.4
 
 @onready var timer_dormir: Timer = $Timer_dormir
 
+@onready var luz: PointLight2D = $PointLight2D
+
 var ralentizado = false
 
 var buff = false

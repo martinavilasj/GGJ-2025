@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://b5vto1raj48l0"]
+[gd_scene load_steps=62 format=3 uid="uid://b5vto1raj48l0"]
 
 [ext_resource type="Script" path="res://scripts/rigid_body_2d.gd" id="1_jxf05"]
 [ext_resource type="Texture2D" uid="uid://diogyr3n0dv7h" path="res://assets/burbuja_hamster.png" id="2_d25mc"]
@@ -392,6 +392,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5gw8"]
 radius = 63.0714
 
+[sub_resource type="Gradient" id="Gradient_imknr"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l7er1"]
+gradient = SubResource("Gradient_imknr")
+fill = 1
+fill_from = Vector2(0.5, 0.504587)
+fill_to = Vector2(0.770642, 0.142202)
+
 [node name="RigidBody2D" type="RigidBody2D" groups=["player"]]
 material = SubResource("CanvasItemMaterial_q0aru")
 physics_material_override = SubResource("PhysicsMaterial_b023s")
@@ -442,6 +451,12 @@ offset_bottom = 27.0
 
 [node name="Timer_dormir" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(2.68, 2.68)
+enabled = false
+texture = SubResource("GradientTexture2D_l7er1")
+texture_scale = 5.28
 
 [connection signal="body_entered" from="." to="." method="_on_body_piedra_entered"]
 [connection signal="timeout" from="Timer_ralentizar" to="." method="_on_timer_timeout"]

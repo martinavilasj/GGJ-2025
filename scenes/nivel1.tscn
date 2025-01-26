@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://k5vf2pfbw7db"]
+[gd_scene load_steps=18 format=3 uid="uid://k5vf2pfbw7db"]
 
 [ext_resource type="Texture2D" uid="uid://ewjlqhrisyt2" path="res://assets/Dock/Water waves background seamless liquid pattern vector image on VectorStock.jpg" id="1_ja0j3"]
 [ext_resource type="Script" path="res://scripts/nivel_1.gd" id="1_we4cj"]
@@ -12,6 +12,45 @@
 [ext_resource type="PackedScene" uid="uid://c2eiawoadm5bm" path="res://scenes/tubo_apoyo.tscn" id="10_k7pmg"]
 [ext_resource type="PackedScene" uid="uid://2rjqpfvvcqqy" path="res://scenes/plat_movil.tscn" id="11_d333w"]
 
+[sub_resource type="Animation" id="Animation_hf63h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hyujn"]
+resource_name = "canvas"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.099986, 0.099986, 0.099986, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jgene"]
+_data = {
+"RESET": SubResource("Animation_hf63h"),
+"canvas": SubResource("Animation_hyujn")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnguu"]
+size = Vector2(934.042, 25)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i683n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5ib0f"]
@@ -19,6 +58,28 @@
 [node name="Area2D" type="Node2D"]
 script = ExtResource("1_we4cj")
 escena_piedra = ExtResource("2_c5j1w")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="AnimationCanvas" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jgene")
+}
+
+[node name="zona_oscura" type="Area2D" parent="."]
+position = Vector2(3444, 1224)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zona_oscura"]
+position = Vector2(149.5, 0)
+shape = SubResource("RectangleShape2D_mnguu")
+
+[node name="zona_clara" type="Area2D" parent="."]
+position = Vector2(7048, 1447)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zona_clara"]
+position = Vector2(253.824, 27.7036)
+rotation = 0.326735
+shape = SubResource("RectangleShape2D_mnguu")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(5760.12, 1089)
@@ -32,7 +93,7 @@ physics_material_override = SubResource("PhysicsMaterial_5ib0f")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-100.619, 182.223)
 scale = Vector2(1.81319, 2.30847)
-polygon = PackedVector2Array(-1, 1, 15.7835, 64.0153, 28.4684, 141.556, 33.432, 279.31, 35.638, 392.805, 145.389, 393.671, 206.056, 393.671, 272.237, 393.671, 340.625, 391.505, 421.698, 381.975, 474.091, 366.38, 525.934, 346.454, 586.049, 312.665, 647.267, 266.314, 700.073, 233.725, 747.642, 204.368, 772.46, 208.267, 807.206, 227.76, 894.896, 335.624, 952.254, 371.579, 997.478, 390.639, 1067.52, 403.201, 1124.88, 413.164, 1161.83, 456.916, 1234.58, 456.916, 1296.95, 456.916, 1369.2, 407.533, 1443.1, 361.182, 1609.11, 353.817, 1774.01, 352.951, 1839.64, 440.455, 1852.88, 571.277, 1872.73, 723.759, 1906.37, 835.955, 1943.33, 893.136, 1993.51, 970.243, 2039.84, 1041.72, 2108.78, 1114.49, 2177.17, 1203.3, 2286.92, 1245.75, 2395.02, 1285.17, 2576.46, 1282.57, 2755.15, 1233.19, 2930.54, 1246.18, 3078.89, 1277.37, 3221.18, 1266.98, 3307.22, 1230.59, 3399.87, 1202, 3475.98, 1199.4, 3564.78, 1196.8, 3624.34, 1235.79, 3789.8, 1207.2, 3889.07, 1176.44, 3998.27, 1114.06, 4050.66, 1017.89, 4100.3, 906.131, 4143.32, 779.207, 4183.02, 537.489, 4306.56, 608.965, 4495.73, 635.389, 4701.45, 639.721, 4899.99, 615.029, 5018.57, 599.001, 5102.4, 583.84, 5137.7, 564.78, 5170.79, 537.056, 5184.57, 505.433, 5223.18, 239.889, 5239.17, 213.898, 5250.76, 221.695, 5258.48, 238.59, 5276.13, 294.038, 5290.46, 342.555, 5305.36, 384.141, 5319.7, 403.201, 5325.76, 412.298, 5331.28, 419.229, 5335.69, 424.427, 5342.31, 428.759, 5356.1, 432.224, 5367.68, 435.257, 5379.26, 437.423, 5403.53, 439.589, 5423.93, 439.155, 5443.79, 434.823, 5461.43, 429.625, 5475.22, 423.994, 5496.18, 414.897, 5509.42, 540.088, 5709.06, 542.687, 5869, 535.756, 5899.89, 508.465, 5914.78, 469.912, 6030.6, 479.875, 6082.99, 476.409, 6139.8, 405.367, 6150.28, 299.236, 6164.61, 194.838, 6200.46, 139.823, 6279.88, 91.3059, 6358.75, 65.3147, 6442.03, 21.5628, 6543.5, -22.1892, 6656.01, -36.0512, 6646.64, 1616.13, 1495.5, 1623.06, -68.0464, 1604.86, -64.1858, 482.474, -64.1858, -46.0145)
+polygon = PackedVector2Array(-1, 1, 15.7835, 64.0153, 28.4684, 141.556, 33.432, 279.31, 35.638, 392.805, 145.389, 393.671, 206.056, 393.671, 272.237, 393.671, 340.625, 391.505, 421.698, 381.975, 474.091, 366.38, 525.934, 346.454, 586.049, 312.665, 647.267, 266.314, 700.073, 233.725, 747.642, 204.368, 772.46, 208.267, 807.206, 227.76, 894.896, 335.624, 952.254, 371.579, 997.478, 390.639, 1067.52, 403.201, 1124.88, 413.164, 1161.83, 456.916, 1234.58, 456.916, 1296.95, 456.916, 1369.2, 407.533, 1443.1, 361.182, 1609.11, 353.817, 1774.01, 352.951, 1839.64, 440.455, 1852.88, 571.277, 1872.73, 723.759, 1906.37, 835.955, 1943.33, 893.136, 1993.51, 970.243, 2039.84, 1041.72, 2108.78, 1114.49, 2177.17, 1203.3, 2286.92, 1245.75, 2395.02, 1285.17, 2576.46, 1282.57, 2755.15, 1233.19, 2930.54, 1246.18, 3078.89, 1277.37, 3221.18, 1266.98, 3307.22, 1230.59, 3399.87, 1202, 3475.98, 1199.4, 3564.78, 1196.8, 3624.34, 1235.79, 3789.8, 1207.2, 3889.07, 1176.44, 3998.27, 1114.06, 4050.66, 1017.89, 4100.3, 906.131, 4154.35, 805.199, 4208.95, 615.463, 4353.44, 624.126, 4495.73, 635.389, 4701.45, 639.721, 4899.99, 615.029, 5018.57, 599.001, 5102.4, 583.84, 5137.7, 564.78, 5170.79, 537.056, 5184.57, 505.433, 5223.18, 239.889, 5239.17, 213.898, 5250.76, 221.695, 5258.48, 238.59, 5276.13, 294.038, 5290.46, 342.555, 5305.36, 384.141, 5319.7, 403.201, 5325.76, 412.298, 5331.28, 419.229, 5335.69, 424.427, 5342.31, 428.759, 5356.1, 432.224, 5367.68, 435.257, 5379.26, 437.423, 5403.53, 439.589, 5423.93, 439.155, 5443.79, 434.823, 5461.43, 429.625, 5475.22, 423.994, 5496.18, 414.897, 5509.42, 540.088, 5709.06, 542.687, 5869, 535.756, 5899.89, 508.465, 5914.78, 469.912, 6030.6, 479.875, 6082.99, 476.409, 6139.8, 405.367, 6150.28, 299.236, 6164.61, 194.838, 6200.46, 139.823, 6279.88, 91.3059, 6358.75, 65.3147, 6442.03, 21.5628, 6543.5, -22.1892, 6656.01, -36.0512, 6646.64, 1616.13, 1495.5, 1623.06, -68.0464, 1604.86, -64.1858, 482.474, -64.1858, -46.0145)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
 
@@ -44,7 +105,7 @@ position = Vector2(1355, 560)
 scale = Vector2(0.495028, 0.436542)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_6mg0o")]
-position = Vector2(7042, 1676)
+position = Vector2(2549, 860)
 
 [node name="TimerPiedras" type="Timer" parent="."]
 wait_time = 2.0
@@ -165,6 +226,15 @@ position = Vector2(6266, 2859)
 rotation = -0.0997856
 scale = Vector2(1.48, 1)
 
-[node name="Plat_movil" parent="." instance=ExtResource("11_d333w")]
+[node name="Node2D" type="Node2D" parent="."]
 
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
+position = Vector2(7048, 1456)
+
+[node name="Plat_movil" parent="Node2D" node_paths=PackedStringArray("destination") instance=ExtResource("11_d333w")]
+position = Vector2(7049, 2259)
+destination = NodePath("../Marker2D")
+
+[connection signal="body_entered" from="zona_oscura" to="." method="_on_zona_oscura_body_entered"]
+[connection signal="body_entered" from="zona_clara" to="." method="_on_zona_clara_body_entered"]
 [connection signal="timeout" from="TimerPiedras" to="." method="_on_timer_piedras_timeout"]
