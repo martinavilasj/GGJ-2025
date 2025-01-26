@@ -19,6 +19,9 @@ var disminuidor_oxigeno = 0.4
 @onready var timer_dormir: Timer = $Timer_dormir
 
 @onready var luz: PointLight2D = $PointLight2D
+@onready var audio_dano: AudioStreamPlayer2D = $"Audio daño"
+@onready var audio_bolsa: AudioStreamPlayer2D = $"Audio bolsa"
+@onready var audio_burbuja_cura: AudioStreamPlayer2D = $"Audio burbuja cura"
 
 var ralentizado = false
 

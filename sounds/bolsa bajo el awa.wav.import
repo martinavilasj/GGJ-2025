@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0v0y2v2tn02p"
+path="res://.godot/imported/bolsa bajo el awa.wav-8ded7c0a104ebba388b0544af39e1831.sample"
+
+[deps]
+
+source_file="res://sounds/bolsa bajo el awa.wav"
+dest_files=["res://.godot/imported/bolsa bajo el awa.wav-8ded7c0a104ebba388b0544af39e1831.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

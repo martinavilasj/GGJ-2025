@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		body.audio_bolsa.play()
 		body.ralentizar(5, 0.3)
 		queue_free()
 		
