@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwe65kdx3hmeb"]
+
+[ext_resource type="Script" path="res://scripts/menus/intro.gd" id="1_21dsh"]
+[ext_resource type="Texture2D" uid="uid://2ac35henokve" path="res://assets/pantallas/intro.jpg" id="1_u3h1e"]
+[ext_resource type="FontFile" uid="uid://br83wp6xs03c5" path="res://fonts/Chewy-Regular.ttf" id="2_34lab"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_21dsh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_u3h1e")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -724.0
+offset_top = -138.0
+offset_right = 699.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_34lab")
+theme_override_font_sizes/font_size = 51
+text = "Un día, un pequeño niño paseaba con su familia en el parque, sin que sus padres supieran que llevaba a su lindo hamster en su mochila.
+Cuando deja su mochila a la orilla del lago, un gato naranja salvaje aparece, empujando sin querer la mochila.
+El pequeño hámster rueda sin control hacia el agua...."
+wrap_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

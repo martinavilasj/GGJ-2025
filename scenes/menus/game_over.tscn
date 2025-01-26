@@ -52,11 +52,18 @@ text = "¿Volver a intentar?"
 label_settings = SubResource("LabelSettings_5qgr7")
 
 [node name="reintentar" type="TextureButton" parent="."]
-layout_mode = 2
-offset_left = 782.0
-offset_top = 501.0
-offset_right = 1138.0
-offset_bottom = 612.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -55.5
+offset_right = 178.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("3_woskk")
 texture_hover = ExtResource("4_1wfp2")
 texture_focused = ExtResource("4_1wfp2")
@@ -64,11 +71,18 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Salir" type="TextureButton" parent="."]
-layout_mode = 2
-offset_left = 782.0
-offset_top = 627.0
-offset_right = 1138.0
-offset_bottom = 719.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = 92.0
+offset_right = 178.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("5_ewc5d")
 texture_hover = ExtResource("6_bawss")
 texture_focused = ExtResource("6_bawss")

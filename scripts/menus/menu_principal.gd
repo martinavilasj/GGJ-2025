@@ -4,7 +4,7 @@ extends Control
 @onready var timer: Timer = $Timer
 @onready var disclaimer: TextureRect = $disclaimer
 
-@export var tiempo_disclaimer: int = 5
+@export var tiempo_disclaimer: int = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +14,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("ui_accept"):
+		get_tree().change_scene_to_file("res://scenes/menus/intro.tscn")
 
 
 func _on_nuevo_juego_pressed() -> void:
@@ -31,4 +32,4 @@ func start_game() -> void:
 	disclaimer.visible = true
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://scenes/nivel1.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/intro.tscn")
