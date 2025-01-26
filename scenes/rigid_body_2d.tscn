@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://b5vto1raj48l0"]
+[gd_scene load_steps=73 format=3 uid="uid://b5vto1raj48l0"]
 
 [ext_resource type="Script" path="res://scripts/rigid_body_2d.gd" id="1_jxf05"]
 [ext_resource type="Texture2D" uid="uid://diogyr3n0dv7h" path="res://assets/burbuja_hamster.png" id="2_d25mc"]
@@ -509,7 +509,6 @@ offset_bottom = 1315.0
 grow_horizontal = 0
 scale = Vector2(0.06, 0.06)
 value = 100.0
-fill_mode = 1
 texture_progress = ExtResource("6_sfet0")
 
 [node name="corazon" type="TextureRect" parent="CanvasLayer/Control"]

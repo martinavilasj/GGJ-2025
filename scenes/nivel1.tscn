@@ -190,8 +190,7 @@ position = Vector2(10158, 1205)
 scale = Vector2(0.495028, 0.436542)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_6mg0o")]
-position = Vector2(5146, 308)
-
+position = Vector2(228, 893)
 
 [node name="TimerPiedras" type="Timer" parent="."]
 wait_time = 2.0
@@ -400,7 +399,7 @@ scale = Vector2(1.6, 1.32)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_udibw")
-volume_db = 3.748
+volume_db = 5.0
 autoplay = true
 
 [node name="victoria" type="Area2D" parent="."]
