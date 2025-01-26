@@ -134,7 +134,7 @@ position = Vector2(10158, 1205)
 scale = Vector2(0.495028, 0.436542)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_6mg0o")]
-position = Vector2(262, 887)
+position = Vector2(5146, 308)
 
 [node name="TimerPiedras" type="Timer" parent="."]
 wait_time = 2.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://b5vto1raj48l0"]
+[gd_scene load_steps=72 format=3 uid="uid://b5vto1raj48l0"]
 
 [ext_resource type="Script" path="res://scripts/rigid_body_2d.gd" id="1_jxf05"]
 [ext_resource type="Texture2D" uid="uid://diogyr3n0dv7h" path="res://assets/burbuja_hamster.png" id="2_d25mc"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dpgc5pmkb4tw6" path="res://assets/barra/corazon-01.png" id="7_t54tx"]
 [ext_resource type="Texture2D" uid="uid://n713w1fsghfv" path="res://assets/barra/corazon_quebrado-01.png" id="8_5f8qe"]
 [ext_resource type="Texture2D" uid="uid://crdq2hdoc6cg5" path="res://assets/barra/dead_heart-01.png" id="9_pcv68"]
+[ext_resource type="AudioStream" uid="uid://donk6rtw4c0p6" path="res://sounds/bola rota.wav" id="10_8xkok"]
+[ext_resource type="AudioStream" uid="uid://d0v0y2v2tn02p" path="res://sounds/bolsa bajo el awa.wav" id="11_pqxfc"]
+[ext_resource type="AudioStream" uid="uid://v2a0je76pdrc" path="res://sounds/burbuja vida.wav" id="12_5tr7v"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q0aru"]
 
@@ -549,6 +552,16 @@ texture_scale = 5.28
 libraries = {
 "": SubResource("AnimationLibrary_xx8w5")
 }
+
+[node name="Audio daño" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_8xkok")
+volume_db = 4.952
+
+[node name="Audio bolsa" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_pqxfc")
+
+[node name="Audio burbuja cura" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_5tr7v")
 
 [connection signal="body_entered" from="." to="." method="_on_body_piedra_entered"]
 [connection signal="timeout" from="Timer_ralentizar" to="." method="_on_timer_timeout"]
