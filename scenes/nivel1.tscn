@@ -1,12 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://k5vf2pfbw7db"]
+[gd_scene load_steps=28 format=3 uid="uid://k5vf2pfbw7db"]
 
 [ext_resource type="Texture2D" uid="uid://ewjlqhrisyt2" path="res://assets/Dock/Water waves background seamless liquid pattern vector image on VectorStock.jpg" id="1_ja0j3"]
 [ext_resource type="Script" path="res://scripts/nivel_1.gd" id="1_we4cj"]
 [ext_resource type="PackedScene" uid="uid://ysyhuewujdee" path="res://scenes/piedras.tscn" id="2_c5j1w"]
 [ext_resource type="PackedScene" uid="uid://b5vto1raj48l0" path="res://scenes/rigid_body_2d.tscn" id="3_6mg0o"]
 [ext_resource type="PackedScene" uid="uid://bqv0hwc6fjjd8" path="res://scenes/bolsas.tscn" id="3_cf77e"]
+[ext_resource type="Texture2D" uid="uid://idg2l7pnqks6" path="res://assets/background/1_cielo.png" id="3_ejf7l"]
 [ext_resource type="Texture2D" uid="uid://lqkltjhumyom" path="res://assets/Textura_piso.jpg" id="4_dvooj"]
+[ext_resource type="Texture2D" uid="uid://b8lve2c0a3p2p" path="res://assets/background/2_nubes.png" id="4_n0qea"]
+[ext_resource type="Texture2D" uid="uid://5bw6q337dv8g" path="res://assets/background/3_cemento.png" id="5_eqfrh"]
+[ext_resource type="Texture2D" uid="uid://dbhtxu5bjpuir" path="res://assets/background/4_agua_fondo.png" id="6_i207q"]
 [ext_resource type="PackedScene" uid="uid://dm8j3t0npalqs" path="res://scenes/basura/botella_1.tscn" id="6_iogm6"]
+[ext_resource type="Texture2D" uid="uid://ncfm1h0qpakt" path="res://assets/background/5_agua_frente.png" id="7_ikm5w"]
 [ext_resource type="PackedScene" uid="uid://bbxlywo7nfjot" path="res://scenes/basura/botella_2.tscn" id="7_m6vgu"]
 [ext_resource type="PackedScene" uid="uid://c35nkihwn0poo" path="res://scenes/basura/lata.tscn" id="8_2wggh"]
 [ext_resource type="PackedScene" uid="uid://crk3o0aaslh0p" path="res://scenes/tubo_apoyo_1WC.tscn" id="9_5c6us"]
@@ -14,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://2rjqpfvvcqqy" path="res://scenes/plat_movil.tscn" id="11_d333w"]
 [ext_resource type="PackedScene" uid="uid://c76h60h25twfu" path="res://scenes/rejilla_mala.tscn" id="13_oooay"]
 [ext_resource type="PackedScene" uid="uid://cu4b8gb0f7mgu" path="res://scenes/rejilla.tscn" id="14_b7avv"]
+[ext_resource type="AudioStream" uid="uid://dlt22xufq6122" path="res://sounds/musica del gameplay.wav" id="15_udibw"]
 
 [sub_resource type="Animation" id="Animation_hf63h"]
 length = 0.001
@@ -58,6 +64,9 @@ size = Vector2(934.042, 34.2215)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5ib0f"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6cems"]
+radius = 118.038
+
 [node name="Area2D" type="Node2D"]
 script = ExtResource("1_we4cj")
 escena_piedra = ExtResource("2_c5j1w")
@@ -68,6 +77,52 @@ escena_piedra = ExtResource("2_c5j1w")
 libraries = {
 "": SubResource("AnimationLibrary_jgene")
 }
+
+[node name="background" type="CanvasGroup" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="background"]
+position = Vector2(43.0005, 1422)
+scale = Vector2(7, 7)
+texture = ExtResource("3_ejf7l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="background"]
+position = Vector2(270, 1509)
+scale = Vector2(7, 7)
+texture = ExtResource("4_n0qea")
+
+[node name="Sprite2D3" type="Sprite2D" parent="background"]
+position = Vector2(395, 1437)
+scale = Vector2(5, 5)
+texture = ExtResource("5_eqfrh")
+
+[node name="Sprite2D4" type="Sprite2D" parent="background"]
+
+[node name="Sprite2D5" type="Sprite2D" parent="background"]
+position = Vector2(1884, 1457)
+scale = Vector2(6, 6)
+texture = ExtResource("6_i207q")
+
+[node name="Sprite2D6" type="Sprite2D" parent="background"]
+position = Vector2(4795, 1410)
+scale = Vector2(5.075, 5.075)
+texture = ExtResource("7_ikm5w")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 1)
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 1)
 
 [node name="zona_oscura" type="Area2D" parent="."]
 position = Vector2(3444, 1224)
@@ -85,6 +140,7 @@ rotation = 0.326735
 shape = SubResource("RectangleShape2D_mnguu")
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(5760.12, 1089)
 scale = Vector2(16.0187, 7.48901)
 texture = ExtResource("1_ja0j3")
@@ -134,7 +190,7 @@ position = Vector2(10158, 1205)
 scale = Vector2(0.495028, 0.436542)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_6mg0o")]
-position = Vector2(262, 887)
+position = Vector2(124, 805)
 
 [node name="TimerPiedras" type="Timer" parent="."]
 wait_time = 2.0
@@ -341,7 +397,20 @@ scale = Vector2(2.04, 2.4)
 position = Vector2(4905, 394)
 scale = Vector2(1.6, 1.32)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_udibw")
+volume_db = 3.748
+autoplay = true
+
+[node name="victoria" type="Area2D" parent="."]
+position = Vector2(11848, -95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="victoria"]
+position = Vector2(-27, 108)
+shape = SubResource("CircleShape2D_6cems")
+
 [connection signal="body_entered" from="zona_oscura" to="." method="_on_zona_oscura_body_entered"]
 [connection signal="body_entered" from="zona_clara" to="." method="_on_zona_clara_body_entered"]
 [connection signal="body_exited" from="zona_clara" to="." method="_on_zona_clara_body_exited"]
 [connection signal="timeout" from="TimerPiedras" to="." method="_on_timer_piedras_timeout"]
+[connection signal="body_entered" from="victoria" to="." method="_on_victoria_body_entered"]

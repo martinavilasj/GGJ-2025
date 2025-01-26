@@ -54,3 +54,8 @@ func _on_zona_clara_body_entered(body: Node2D) -> void:
 func _on_zona_clara_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		hamster_in_zone = false
+
+
+func _on_victoria_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		get_tree().change_scene_to_file("res://scenes/menus/victoria.tscn")

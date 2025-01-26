@@ -1,10 +1,11 @@
-[gd_scene load_steps=69 format=3 uid="uid://b5vto1raj48l0"]
+[gd_scene load_steps=70 format=3 uid="uid://b5vto1raj48l0"]
 
 [ext_resource type="Script" path="res://scripts/rigid_body_2d.gd" id="1_jxf05"]
 [ext_resource type="Texture2D" uid="uid://diogyr3n0dv7h" path="res://assets/burbuja_hamster.png" id="2_d25mc"]
 [ext_resource type="Texture2D" uid="uid://cayxxv0eg3rck" path="res://assets/sprite_sheet_walk.png" id="2_t4iwk"]
 [ext_resource type="Texture2D" uid="uid://g5qia6ua2tm2" path="res://assets/sprite_sheet_idle.png" id="4_jg55i"]
 [ext_resource type="Texture2D" uid="uid://dq1c6t5cc3c5d" path="res://assets/sprite_sheet_lay_down.png" id="5_8obtp"]
+[ext_resource type="Texture2D" uid="uid://c41de78yujv4x" path="res://assets/barra/barra_nube-02.png" id="6_sfet0"]
 [ext_resource type="Texture2D" uid="uid://b8cgfriyr3ei0" path="res://assets/barra/viento_sin_fondo-01.png" id="6_u4nov"]
 [ext_resource type="Texture2D" uid="uid://dpgc5pmkb4tw6" path="res://assets/barra/corazon-01.png" id="7_t54tx"]
 [ext_resource type="Texture2D" uid="uid://n713w1fsghfv" path="res://assets/barra/corazon_quebrado-01.png" id="8_5f8qe"]
@@ -465,7 +466,7 @@ scale = Vector2(0.85, 0.85)
 shape = SubResource("CircleShape2D_p5gw8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.9, 0.9)
+zoom = Vector2(0.7, 0.7)
 limit_left = -120
 
 [node name="Timer_ralentizar" type="Timer" parent="."]
@@ -498,14 +499,15 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -436.0
-offset_top = -124.0
-offset_right = 6118.0
-offset_bottom = 4376.0
+offset_left = -347.0
+offset_top = 15.0
+offset_right = 5229.0
+offset_bottom = 1315.0
 grow_horizontal = 0
-scale = Vector2(0.065, 0.065)
+scale = Vector2(0.06, 0.06)
 value = 100.0
-texture_progress = ExtResource("6_u4nov")
+fill_mode = 1
+texture_progress = ExtResource("6_sfet0")
 
 [node name="corazon" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -535,6 +537,16 @@ offset_right = 1629.0
 offset_bottom = 2103.0
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("9_pcv68")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -399.0
+offset_top = 7.0
+offset_right = -359.0
+offset_bottom = 47.0
+scale = Vector2(2.285, 2.285)
+texture = ExtResource("6_u4nov")
+expand_mode = 2
 
 [node name="Timer_dormir" type="Timer" parent="."]
 wait_time = 10.0

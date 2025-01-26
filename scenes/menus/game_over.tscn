@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d27cgddwfy1q4"]
+[gd_scene load_steps=10 format=3 uid="uid://d27cgddwfy1q4"]
 
 [ext_resource type="Script" path="res://scripts/menus/game_over.gd" id="1_fqfv3"]
 [ext_resource type="FontFile" uid="uid://br83wp6xs03c5" path="res://fonts/Chewy-Regular.ttf" id="2_2f5k4"]
+[ext_resource type="Texture2D" uid="uid://j1vp0dk8nltg" path="res://assets/botones/BOTON_DAME_OXIGENO.png" id="3_woskk"]
+[ext_resource type="Texture2D" uid="uid://t8nox5mguhe3" path="res://assets/botones/BOTON_DAME_OXIGENO_SELECCION.png" id="4_1wfp2"]
+[ext_resource type="Texture2D" uid="uid://dc3pnomlb75ii" path="res://assets/botones/BOTON_SALIR.png" id="5_ewc5d"]
+[ext_resource type="Texture2D" uid="uid://cmjcqb6otkftp" path="res://assets/botones/BOTON_SALIR_SELECCION.png" id="6_bawss"]
 
 [sub_resource type="Gradient" id="Gradient_khitk"]
 colors = PackedColorArray(0.117647, 0.117647, 0.258824, 1, 0.756863, 0.760784, 0.980392, 1)
@@ -47,31 +51,29 @@ grow_horizontal = 2
 text = "¿Volver a intentar?"
 label_settings = SubResource("LabelSettings_5qgr7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -178.0
-offset_top = -39.0
-offset_right = 178.0
-offset_bottom = 149.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="reintentar" type="Button" parent="VBoxContainer"]
+[node name="reintentar" type="TextureButton" parent="."]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_2f5k4")
-theme_override_font_sizes/font_size = 65
-text = "Dame oxigeno"
+offset_left = 782.0
+offset_top = 501.0
+offset_right = 1138.0
+offset_bottom = 612.0
+texture_normal = ExtResource("3_woskk")
+texture_hover = ExtResource("4_1wfp2")
+texture_focused = ExtResource("4_1wfp2")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Salir" type="Button" parent="VBoxContainer"]
+[node name="Salir" type="TextureButton" parent="."]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_2f5k4")
-theme_override_font_sizes/font_size = 65
-text = "Salir"
+offset_left = 782.0
+offset_top = 627.0
+offset_right = 1138.0
+offset_bottom = 719.0
+texture_normal = ExtResource("5_ewc5d")
+texture_hover = ExtResource("6_bawss")
+texture_focused = ExtResource("6_bawss")
+ignore_texture_size = true
+stretch_mode = 5
 
-[connection signal="pressed" from="VBoxContainer/reintentar" to="." method="_on_reintentar_pressed"]
-[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="reintentar" to="." method="_on_reintentar_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]
