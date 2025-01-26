@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://crk3o0aaslh0p"]
+
+[ext_resource type="Script" path="res://scripts/tubo_apoyo.gd" id="1_llmnm"]
+[ext_resource type="Texture2D" uid="uid://b8rfxx1770tyu" path="res://assets/rejilla_comun.png" id="1_pcxg0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uynj"]
+
+[node name="Tubo apoyo" type="StaticBody2D"]
+script = ExtResource("1_llmnm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.19111, 0.0501097)
+rotation = 1.5708
+scale = Vector2(-0.0143847, 0.247593)
+texture = ExtResource("1_pcxg0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(11.52, 0.48)
+shape = SubResource("RectangleShape2D_8uynj")
+one_way_collision = true

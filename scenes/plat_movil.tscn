@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://2rjqpfvvcqqy"]
+
+[ext_resource type="Texture2D" uid="uid://6p1aevrk62s1" path="res://assets/—Pngtree—brown wood log_8625748.png" id="1_1j3pd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5mr0w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyxu8"]
+size = Vector2(19.6902, 20)
+
+[node name="Plat_movil" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_5mr0w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.517012, 0.461396)
+texture = ExtResource("1_1j3pd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.3, 0)
+scale = Vector2(27.76, 4.76)
+shape = SubResource("RectangleShape2D_xyxu8")
+one_way_collision = true
