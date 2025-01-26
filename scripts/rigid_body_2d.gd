@@ -6,7 +6,7 @@ var  _state: PlayerState = PlayerState.IDLE
 
 @export var velocidad_inicial = 20
 var velocidad = velocidad_inicial
-@export var jump_velocity_inicial = 200
+@export var jump_velocity_inicial = 230
 var jump_velocity = jump_velocity_inicial
 
 var oxigeno = 100
